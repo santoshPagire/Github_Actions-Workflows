@@ -1,0 +1,11 @@
+name: Workflow run event
+on:
+    workflow_run:
+      workflows: [first workflow]
+      types: [completed]
+
+jobs:
+    echo-string:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "This triggered after 'first workflow' completed"
