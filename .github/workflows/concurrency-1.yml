@@ -6,6 +6,10 @@ on:
               description: "Environment"
               type: environment
               required: true
+concurrency:
+  group: Concurrency-1 
+  cancel-in-progress: true
+
 jobs:
   sleeps:
     runs-on: ubuntu-latest
