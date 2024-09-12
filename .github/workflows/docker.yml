@@ -10,7 +10,7 @@ jobs:
       #   username:
       #   password:
       env:
-        API_URL: test-url.com
+        API_URL: some-url.com
       ports:
         - 80
       # volumes:
@@ -25,10 +25,8 @@ jobs:
           cat /etc/os-release
       - name: Log Env
         run: echo $API_URL
-
-      - name: Create file
-        run: echo 'some random text for check' >> text.txt
-
+      - name: Create a file
+        run: echo 'Some text' > text.txt
       - name: Container in a Step
         uses: docker://node:18.16-alpine3.17
         with:
@@ -38,21 +36,14 @@ jobs:
         uses: docker://node:18.16-alpine3.17
         with:
           args: -v
-
-      - name: Show file content
+      - name: Show file contents
         uses: docker://node:18.16-alpine3.17
         with:
           entrypoint: cat
           args: text.txt
-    #   - uses: actions/checkout@v3
-    #   - name: Run a bash script
-    #     uses: docker://node:18.16-alpine3.17
-    #     with:
-    #       entrypoint: ./script.sh
-    #       args: "some args"
       - uses: actions/checkout@v3
       - name: Run a bash script
         uses: docker://node:18.16-alpine3.17
         with:
-            entrypoint: ./script.sh
-            args: "Some string"
+          entrypoint: ./script.sh
+          args: "Some string"
