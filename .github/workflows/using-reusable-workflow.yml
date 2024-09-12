@@ -15,7 +15,7 @@ jobs:
     secrets:
       access-token: ${{ secrets.ACCESS_TOKEN }}
   calling-a-reusable-wf-in-the-same-repo:
-        uses: santoshPagire/Github_Actions-Workflows/.github/workflows/reusable-workflow.yaml@main
+        uses: santoshPagire/Github_Actions-Workflows/.github/workflows/reusable-workflow.yml@main
   using-reusable-wf-output:
         runs-on: ubuntu-latest
         needs: calling-a-reusable-wf-in-the-same-repo
