@@ -1,10 +1,10 @@
 name: Reusable Workflow
 on: [workflow_dispatch]
-  workflow_call:
-    outputs:
-      date:
-        description: "Date Value"
-        value: ${{ jobs.generate-output.outputs.date }}
+  # workflow_call:
+  #   outputs:
+  #     date:
+  #       description: "Date Value"
+  #       value: ${{ jobs.generate-output.outputs.date }}
 
 jobs:
   nested-workflow-call:
