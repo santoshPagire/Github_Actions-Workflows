@@ -1,5 +1,5 @@
 name: Reusable Workflow
-on:
+on: [workflow_dispatch]
   workflow_call:
     outputs:
       date:
